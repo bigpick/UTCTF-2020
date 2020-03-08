@@ -12,6 +12,9 @@
 
 These are writeups to challenges I solved for this CTF. Points next to the name were what they were worth when I solved it. They are now all 50 points. I tried to also keep a copy of each referenced "download XXXX" file for a challenge in the [files](./files) directory.
 
+&nbsp;
+&nbsp;
+---
 
 ### [basics] reverse engineering -- 50
 > I know there's a string in this binary somewhere.... Now where did I leave it?
@@ -27,10 +30,17 @@ Boom.
 
 Flag is `utflag{str1ngs_1s_y0ur_fr13nd}`.
 
+&nbsp;
+&nbsp;
+---
 ### Sanity Check -- 1
 > The flag is utflag{this_is_the_flag}! Welcome to UTCTF!
 
 Flag is `utflag{this_is_the_flag}!`
+
+&nbsp;
+&nbsp;
+---
 
 ### Observe Closely -- 50
 > A simple image with a couple of twists...
@@ -81,6 +91,10 @@ Sweet!
 
 Flag is `utflag{2fbe9adc2ad89c71da48cabe90a121c0}`.
 
+&nbsp;
+&nbsp;
+---
+
 ### [basics] forensics
 > My friend said they hid a flag in this picture, but it's broken! Now that I think about it, I don't even know if it really is a picture...
 
@@ -102,6 +116,10 @@ utflag{fil3_ext3nsi0ns_4r3nt_r34l}
 Sweet!
 
 Flag is `utflag{fil3_ext3nsi0ns_4r3nt_r34l}`.
+
+&nbsp;
+&nbsp;
+---
 
 ### [basics] crypto -- 50
 > Can you make it through all of the encodings?
@@ -191,6 +209,10 @@ So kinda incoherent, but meh its late at this point, but looks like `utflag{n0w_
 
 Flag is `utflag{n0w_th4ts_wh4t_i_c4ll_crypt0}`.
 
+&nbsp;
+&nbsp;
+---
+
 ### bof -- 50 points
 > nc binary.utctf.live 9002
 
@@ -200,8 +222,6 @@ Hitting the endpoint:
 
 ```
 nc binary.utctf.live 9002
-
-
 I really like strings! Please give me a good one!
 lulz
 Thanks for the string
@@ -405,7 +425,6 @@ utflag{thanks_for_the_string_!!!!!!}
 ```
 Woot! Flag is `utflag{thanks_for_the_string_!!!!!!}`.
 
-
 #### Using pwntools
 For educational purposes, I wanted to write this in python using `pwntools`. This is what it ended up being:
 
@@ -434,6 +453,11 @@ $
 ```
 Sweet!
 
+
+&nbsp;
+&nbsp;
+---
+
 ### Zero -- 1858
 > This file seems to be too large given how much text it contains, but I can find zero evidence of the flag. Maybe you'll have better luck than me?
 
@@ -458,6 +482,10 @@ So, looking up a zero-width space decoder on google, first link [here](https://3
 ![](./imgs/steg_fixed_width.png)
 
 Flag is `utflag{whyNOT@sc11_4927aajbqk14}`.
+
+&nbsp;
+&nbsp;
+---
 
 ### spectre -- 50
 > Spectre
@@ -484,6 +512,10 @@ And, look at that:
 
 Flag is: `utflag{sp3tr0gr4m0ph0n3}`.
 
+&nbsp;
+&nbsp;
+---
+
 ### 1 Frame per Minute -- 50
 > I recently received this signal transmission known as SSTV in a mode called Martian? This technology is all very old so I'm not sure what to do with it. Could you help me out?
 
@@ -507,3 +539,7 @@ The end product:
 ![](./imgs/signals_qsstv.png)
 
 Flag is: `utflag{6bdfeac1e2baa12d6ac5384cdfd166b0}`
+
+&nbsp;
+&nbsp;
+---
