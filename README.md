@@ -262,6 +262,13 @@ utflag{thanks_for_the_string_!!!!!!}
 ```
 Woot! Flag is `utflag{thanks_for_the_string_!!!!!!}`.
 
+Here, the random 8 bytes are `... +b'\xa2\xacvm\xeeU\x0f\xc0'+ ...` which I generated in Python3 like so:
+
+```python3
+>>> import secrets
+>>> secrets.token_bytes(8)
+```
+
 #### Using pwntools
 For educational purposes, I wanted to write this in python using `pwntools`. This is what it ended up being:
 
