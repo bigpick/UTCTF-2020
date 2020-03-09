@@ -12,6 +12,20 @@
 
 These are writeups to challenges I solved for this CTF. Points next to the name were what they were worth when I solved it. They are now all 50 points. I tried to also keep a copy of each referenced "download XXXX" file for a challenge in the [files](./files) directory.
 
+### Solved
+
+| Binary Exploitation      | Networking      | Reverse Engineering      | Web    | Crypto    | Forensics|
+|--------------------------|-----------------|--------------------------|--------|-----------|----------|
+|[bof](#bof----50-points)  | ----            | [Basics](#basics-reverse-engineering----50) | --- | [Basics](#basics-crypto----50) | [Sanity check](#sanity-check----1) |
+| | | | | | [Observe Closely](#observe-closely----50)|
+| | | | | | [Basics](#basics-forensics----50) |
+| | | | | | [Zero](#zero----1858)|
+| | | | | | [Spectre](#spectre----50)|
+| | | | | | [1 Frame per minute](#1-frame-per-minute----50)|
+
+
+
+
 &nbsp;
 &nbsp;
 ---
@@ -448,7 +462,7 @@ Flag is `utflag{2fbe9adc2ad89c71da48cabe90a121c0}`.
 &nbsp;
 ---
 
-### [basics] forensics
+### [basics] forensics -- 50
 > My friend said they hid a flag in this picture, but it's broken! Now that I think about it, I don't even know if it really is a picture...
 
 Download the attachment `secret.jpeg`.
