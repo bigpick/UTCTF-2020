@@ -224,7 +224,25 @@ OK - so looks like we can use the address at `0x400693` to pop whatever is on th
 3. Put `0xdeadbeef` onto the stack, so we can get it into RDI.
 4. Finally, put the address of `get_flag` so we jump there now that everything is setup.
 
-Payload:
+
+We can how to formulate our payload in the steps above because looking at the _decompiled_ main function, it yields:
+```c
+undefined8 main(void)
+{
+  char local_78 [112];
+  puts("I really like strings! Please give me a good one!");
+  gets(local_78);
+  puts("Thanks for the string");
+  return 1;
+}
+```
+
+So the `local_78[112]` must be our input buffer, so we know it's size is 112. The following additional 8 bytes that we just fill with random bytes is so that we can then hop over the current base pointer. The base pointer is initialized for each function/stack frame, and we just need to clobber it to get to what we realy want: the return pointer. Once we're there, we can basically write a different address to "return" to wherever we want. In this case, the address of the function that will pop whatever we have on the stack (which we'll make `0xdeadbeef` into RDI). This is because the get_flag function is expecting the argument to be there, so even if we clobber the base pointer but get into get_flag, it won't do us any good without the hex string being in RDI already.
+
+Once we've finally set that up, we can add the address of get_flag, so we hop there once we're done executing the above.
+
+
+All in all, the payload (after some trial and error):
 
 ```
 python -c "from pwn import *; print 'a'*(112)+b'\xa2\xacvm\xeeU\x0f\xc0'+p64(0x400693)+p64(0xdeadbeef)+p64(0x4005ea)" > bof_payload
